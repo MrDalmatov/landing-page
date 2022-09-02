@@ -1,0 +1,53 @@
+.stage {
+    @include section();
+
+    
+
+    background-color: $primaryColor;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media ($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+       
+    }
+
+    &__title {
+      @include h1();
+    }
+
+    &__list {
+      @include lead();
+
+      &-item {
+        list-style: url(../images/check_icon.png);
+        padding-left: 0.5rem;
+
+      }
+    }
+
+    &__image {
+        height: 21.4rem;
+        width: 100%;
+        @include img($white);
+        margin-bottom: 2rem;
+
+        @media ($tablet) {
+          flex-shrink: 0;
+            max-width: 300px;
+            margin-bottom: 0;
+            margin-left: 4rem;
+        }
+
+        @media ($desktop) {
+            max-width: 469px;
+            margin-bottom: 0;
+            margin-left: 8rem;
+        }
+    }
+}
